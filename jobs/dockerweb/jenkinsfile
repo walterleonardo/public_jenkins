@@ -45,7 +45,7 @@ pipeline {
             steps {
                 script{
                     sh ''' 
-                        docker run -dp ${puerto_imagen}:80 --name ${name_final} ${name_imagen}:${tag_imagen}
+                        docker run -dp ${puerto_imagen}:88 --name ${name_final} ${name_imagen}:${tag_imagen}
  
                     '''
                     }
