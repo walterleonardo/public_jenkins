@@ -29,7 +29,7 @@ pipeline {
                 }                    
                                   
             }
-        stage('remove') {
+        stage('remove container') {
             steps {
                 script{
                     sh ''' 
