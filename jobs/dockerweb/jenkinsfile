@@ -11,7 +11,7 @@ pipeline {
         name_final = "${name_container}${tag_imagen}${puerto_imagen}"        
     }
     stages {
-          stage('stop/rm') {
+          stage('stop') {
 
             when {
                 expression { 
@@ -30,13 +30,6 @@ pipeline {
                                   
             }
         stage('remove') {
-
-            when {
-                expression { 
-                    DOCKER_EXIST = sh(returnStdout: true, script: 'echo "$(docker ps -q --filter name=${name_final})"').trim()
-                    return  DOCKER_EXIST != '' 
-                }
-            }
             steps {
                 script{
                     sh ''' 
